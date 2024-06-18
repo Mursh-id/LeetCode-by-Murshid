@@ -4,28 +4,18 @@
  */
 var expect = function(val) {
     
+    const error = (message) => { throw new Error(message); }
+    
     return {
-        toBe : (val1)=> {
-            if (val === val1){
-                return true
-            }
-            else{
-                throw new Error("Not Equal")
-            }
-            
+        toBe: (val1) => {
+            return val === val1 ? true : error("Not Equal");
         },
-        notToBe : (val2)=> {
-            if (val !== val2){
-                return true
-            }
-            else{
-                throw new Error("Equal")
-            }
-            
+        notToBe: (val2) => {
+            return val !== val2 ? true : error("Equal");
         }
     }
-    
 };
+
 
 /**
  * expect(5).toBe(5); // true

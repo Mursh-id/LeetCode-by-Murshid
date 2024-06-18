@@ -19,5 +19,9 @@ class Solution:
             else:
                 return False
             
+        for count in countS.values():
+            if count != 0:
+                return False
+            
         return True
         

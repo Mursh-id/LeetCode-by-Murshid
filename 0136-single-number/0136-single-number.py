@@ -2,14 +2,15 @@
 
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        count = Counter(nums)
+        res = 0
         
-        for i, n in count.items():
-            if n ==1:
-                return i
+        for i in nums:
+            res = res ^ i
+            
+        return res
         
         
-        print(count)
+        
             
 
             

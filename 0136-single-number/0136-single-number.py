@@ -2,18 +2,14 @@
 
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        res = defaultdict(int)  
+        count = Counter(nums)
         
-        # Count occurrences of each number
-        for n in nums:
-            res[n] += 1  
-        
-       
-        print(res)  
-        
-        for i in res:
-            if res[i] == 1:
+        for i in count:
+            if count[i] ==1:
                 return i
+        
+        
+        print(count)
             
 
             

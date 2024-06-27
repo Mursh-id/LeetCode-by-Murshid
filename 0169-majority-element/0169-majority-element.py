@@ -1,12 +1,13 @@
+from collections import Counter
+
 class Solution(object):
     def majorityElement(self, nums):
         count = Counter(nums)
         
-        res = nums[0]
+        majority_count = len(nums) // 2
         
-        for k,v in count.items():
-            if v > len(nums)/2:
-                res =k
-    
-        return res
+        for k, v in count.items():
+            if v > majority_count:
+                return k
+
         

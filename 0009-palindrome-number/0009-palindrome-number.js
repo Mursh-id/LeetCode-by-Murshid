@@ -1,17 +1,14 @@
-/**
- * @param {number} x
- * @return {boolean}
- */
 var isPalindrome = function(x) {
+    const str = x.toString();
+    let left = 0;
+    let right = str.length - 1;
     
-    let str = x.toString()
-    console.log(x)
-    
-    let reversedStr = str.split("").reverse().join("")
-     console.log(reversedStr)
-    
-    if( str === reversedStr){
-        return true
+    while (left < right) {
+        if (str[left] !== str[right]) {
+            return false;
+        }
+        left++;
+        right--;
     }
-    return false
+    return true;
 };

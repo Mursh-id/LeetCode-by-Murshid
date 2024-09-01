@@ -14,21 +14,21 @@ var romanToInt = function(s) {
         M:1000,
     }
     
-    let symbolArray = s.split('')
     
     let number = 0
-    console.log(number)
     
     
     
     for( let i =0 ; i < s.length ; i++ ){
-        if( i !== s.length-1 &&  valuesObj[symbolArray[i]] < valuesObj[symbolArray[i+1]] ){
-            number = number - valuesObj[symbolArray[i]]
+        if( i !== s.length-1 &&  valuesObj[s[i]] < valuesObj[s[i+1]] ){
+            number = number - valuesObj[s[i]] + valuesObj[s[i+1]]
+            
+            i++
             
             
         }else{
-            console.log(symbolArray)
-            number = number + valuesObj[symbolArray[i]]
+            console.log(s)
+            number = number + valuesObj[s[i]]
             
         }
     }

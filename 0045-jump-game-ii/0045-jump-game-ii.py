@@ -12,12 +12,14 @@ class Solution:
         for i in range(len(nums)):
             coverage = max(coverage, nums[i]+i)
             
-            if coverage>=destination:
-                return total_jumps+1
+            
             
             if i == last_jump_index:
                 total_jumps+=1
                 last_jump_index = coverage
+                
+                if coverage>=destination:
+                    return total_jumps
                 
             
                 

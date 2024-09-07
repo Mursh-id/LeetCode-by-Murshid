@@ -5,9 +5,13 @@ class Solution:
         
         sum_of_n = n*(n+1) // 2
         
-        sum_of_nums = sum(nums) 
+        diff = sum_of_n
         
-        return sum_of_n - sum_of_nums
+        for i in nums:
+            diff = diff - i
+            
+        
+        return diff
         
         
         
